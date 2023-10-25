@@ -37,7 +37,6 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    // troubleshoot why Details for Stylists isn't working//
     public ActionResult Details(int id)
     {
       Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist => stylist.StylistId == id);
