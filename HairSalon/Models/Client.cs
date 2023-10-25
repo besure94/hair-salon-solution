@@ -4,7 +4,7 @@ namespace HairSalon.Models
   {
     public string StylistId { get; set; }
     public int ClientId { get; set; }
-    public string ClientName { get; set; }
+    public string Name { get; set; }
     public Stylist Stylist { get; set; }
   }
 }
