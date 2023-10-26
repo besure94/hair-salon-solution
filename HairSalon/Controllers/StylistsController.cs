@@ -55,6 +55,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Edit(int id)
     {
+      ViewBag.PageTitle = "Edit this stylist";
       Stylist thisStylist = _db.Stylists.FirstOrDefault(cuisine => cuisine.StylistId == id);
       return View(thisStylist);
     }
@@ -76,6 +77,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Delete(int id)
     {
+      ViewBag.PageTitle = "Delete this stylist";
       Stylist thisStylist = _db.Stylists.FirstOrDefault(cuisine => cuisine.StylistId == id);
       return View(thisStylist);
     }

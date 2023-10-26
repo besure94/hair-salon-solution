@@ -44,13 +44,14 @@ namespace HairSalon.Controllers
 
     public ActionResult Details(int id)
     {
+      ViewBag.PageTitle = "Client details";
       Client thisClient = _db.Clients.Include(client => client.Stylist).FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
 
     public ActionResult Edit(int id)
     {
-      // ViewBag.PageTitle = "Edit this client";
+      ViewBag.PageTitle = "Edit this client";
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View(thisClient);
@@ -70,6 +71,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Delete(int id)
     {
+      ViewBag.PageTitle = "Delete this client";
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
