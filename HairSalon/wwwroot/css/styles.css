@@ -10,12 +10,16 @@ h3 {
   color: #0077b6;
 }
 
-body {
-  background-color: #000000;
+h4 {
+  color: #0077b6;
 }
 
 hr {
   color: #0077b6;
+}
+
+body {
+  background-color: #000000;
 }
 
 label {

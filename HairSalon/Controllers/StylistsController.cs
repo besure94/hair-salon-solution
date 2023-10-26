@@ -6,24 +6,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HairSalon.Controllers
 {
-
   public class StylistsController : Controller
   {
-
     private readonly HairSalonContext _db;
-
     public StylistsController(HairSalonContext db)
     {
       _db = db;
     }
-
     public ActionResult Index()
     {
       ViewBag.PageTitle = "View all stylists";
       List<Stylist> model = _db.Stylists.ToList();
       return View(model);
     }
-
     public ActionResult Create()
     {
       ViewBag.PageTitle = "Add a new stylist";
@@ -45,14 +40,12 @@ namespace HairSalon.Controllers
         return RedirectToAction("Index");
       }
     }
-
     public ActionResult Details(int id)
     {
       ViewBag.PageTitle = "View stylist details";
       Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist => stylist.StylistId == id);
       return View(thisStylist);
     }
-
     public ActionResult Edit(int id)
     {
       ViewBag.PageTitle = "Edit this stylist";
@@ -74,7 +67,6 @@ namespace HairSalon.Controllers
         return RedirectToAction("Index");
       }
     }
-
     public ActionResult Delete(int id)
     {
       ViewBag.PageTitle = "Delete this stylist";
