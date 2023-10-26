@@ -3,7 +3,6 @@ using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace HairSalon.Controllers
 {
@@ -34,6 +33,7 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Create(Stylist stylist)
     {
+      ViewBag.PageTitle = "Add stylist";
       if (stylist.Name == null || stylist.Info == null)
       {
         return RedirectToAction("Create");
