@@ -59,6 +59,10 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Edit(Client client)
     {
+      if (client.Name == null)
+      {
+        return RedirectToAction("Edit");
+      }
       _db.Clients.Update(client);
       _db.SaveChanges();
       return RedirectToAction("Index");
