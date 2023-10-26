@@ -34,9 +34,16 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Create(Stylist stylist)
     {
-      _db.Stylists.Add(stylist);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+      if (stylist.Name == null || stylist.Info == null)
+      {
+        return RedirectToAction("Create");
+      }
+      else
+      {
+        _db.Stylists.Add(stylist);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
     }
 
     public ActionResult Details(int id)
