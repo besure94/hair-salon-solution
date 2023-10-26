@@ -10,6 +10,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
+      ViewBag.PageTitle = "Eau Claire's Salon";
       return View();
     }
   }
