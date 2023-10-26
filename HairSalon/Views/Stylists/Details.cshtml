@@ -8,15 +8,15 @@
 <h2>Stylist Details</h2>
 <hr/>
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
-<h5>@Html.DisplayNameFor(model => model.Info): @Html.DisplayFor(model => model.Info)</h5>
+<h3>@Html.DisplayNameFor(model => model.Info): @Html.DisplayFor(model => model.Info)</h3>
 
 @if (@Model.Clients.Count == 0)
 {
-  <h4>No clients have been added for this stylist yet.</h4>
+  <h3>No clients have been added for this stylist yet.</h3>
 }
 else
 {
-  <h3>Clients</h3>
+  <h3>Clients:</h3>
   <ul>
     @foreach (Client client in Model.Clients)
     {
