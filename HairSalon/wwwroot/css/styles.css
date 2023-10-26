@@ -1,0 +1,41 @@
+h1 {
+  color: #0077b6;
+}
+
+h2 {
+  color: #0077b6;
+}
+
+h3 {
+  color: #0077b6;
+}
+
+body {
+  background-color: #000000;
+}
+
+hr {
+  color: #0077b6;
+}
+
+label {
+  color: #0077b6;
+  padding-right: 4px;
+  font-size: large;
+  font-weight: 500;
+}
+
+li {
+  font-size: larger;
+  font-weight: 600;
+}
+
+p {
+  color: #0077b6;
+  font-weight: 600;
+  font-size: larger;
+}
+
+ul {
+  color: #0077b6;
+}
