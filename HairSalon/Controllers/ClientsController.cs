@@ -9,21 +9,17 @@ namespace HairSalon.Controllers
 {
   public class ClientsController : Controller
   {
-
     private readonly HairSalonContext _db;
-
     public ClientsController(HairSalonContext db)
     {
       _db = db;
     }
-
     public ActionResult Index()
     {
       List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
       ViewBag.PageTitle = "View all clients";
       return View(model);
     }
-
     public ActionResult Create()
     {
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
@@ -43,14 +39,12 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     public ActionResult Details(int id)
     {
       ViewBag.PageTitle = "Client details";
       Client thisClient = _db.Clients.Include(client => client.Stylist).FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
-
     public ActionResult Edit(int id)
     {
       ViewBag.PageTitle = "Edit this client";
@@ -70,7 +64,6 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
     public ActionResult Delete(int id)
     {
       ViewBag.PageTitle = "Delete this client";
