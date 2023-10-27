@@ -29,7 +29,7 @@ namespace HairSalon.Controllers
     public ActionResult Create(Stylist stylist)
     {
       ViewBag.PageTitle = "Add stylist";
-      if (stylist.Name == null || stylist.Info == null)
+      if (stylist.Name == null || stylist.Specialties == null)
       {
         return RedirectToAction("Create");
       }
@@ -56,7 +56,7 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Edit(Stylist stylist)
     {
-      if (stylist.Name == null || stylist.Info == null)
+      if (stylist.Name == null || stylist.Specialties == null)
       {
         return RedirectToAction("Edit");
       }
