@@ -24,7 +24,7 @@ namespace HairSalon
         {
             app.UseDeveloperExceptionPage();
             app.UseRouting();
-            app.UseStaticFiles(); //THIS IS NEW
+            app.UseStaticFiles();
 
             app.UseEndpoints(routes =>
             {
