@@ -24,21 +24,26 @@ Once a stylist has been added to the list, users can then navigate to the client
 
 Install the required tools that are introduced in [this series of lessons on LearnHowToProgram.com](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-0-lessons-1-5-getting-started-with-c/3-0-0-01-welcome-to-c).
 
-### Setup Project Database
+### Import Project Database
 
-Follow these instructions in the LearnHowToProgram.com lesson
-["Introduction to MySQL Workbench: Creating a Database"](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-3-database-basics/3-3-0-04-introduction-to-mysql-workbench-creating-a-database)to create a database. Use your first and last name to name your database like this: `firstname_lastname`. Click "Apply" and then "Finish".
+If necessary, reference [this lesson on LearnHowToProgram.com](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-3-database-basics/3-3-0-08-creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) for instructions on how to import a database.
 
-Now, create two tables, with one named `stylists` and the other named `clients`. For the `stylists` table, create columns for "StylistId", "Name", and "Specialties". Make sure that "StylistId" has its datatype set to INT. For the boxes to the right, select PK (Primary Key), NN (Not Null), and AI (Auto Incrementing). For "Name" and "Specialties", set the datatype to VARCHAR(255) for each one. Click "Apply" to save these changes.
-
-For the `clients` table, create columns for "StylistId", "ClientId", and "Name". Set the datatype for "StylistId" to INT, and make sure to set its Default/Expression to 0. Set the datatype for "ClientId" to INT. For the boxes to the right, select PK (Primary Key), NN (Not Null), and AI (Auto Incrementing). For "Name", set the datatype to VARCHAR(255). Click "Apply" to save these changes.
+1. From GitHub, select the green button that says `Code`, and clone this repository to your desktop.
+2. Open MySQL Workbench and go to the *Navigator > Administration* window on the left.
+3. In *Import Options*, select *Import from Self-Contained File*.
+4. Navigate to the file `brian.scherner.sql`. Depending on your machine and folder setup, this may look slightly different for you.
+    * Example: *C:\Users\[YOUR-USER-NAME]\Desktop\hair-salon-solution\brian_scherner.sql*
+5. Under *Default Schema To Be Imported To*, select the *New* button.
+6. Enter the name of your database. Use your first and last name, as in `firstname_lastname`.
+7. Select *Ok*.
+8. Select *Start Import* at the bottom right corner of the window.
+9. Reopen the *Navigator > Schemas* tab. Right click and select *Refresh All*. The new database will now appear.
 
 ### Setup and Run Project
 
-1. Select the green button that says `Code`, and clone this repository to your desktop.
-2. Open your terminal and navigate to this project's production directory called `HairSalon`.
-3. In the production directory `HairSalon`, create a new file called `appsettings.json`.
-4. In `appsettings.json`, put in the following code. If you are using the default userID and password from the LearnHowToProgram.com lessons, `uid` will be `root` and `pwd` will be `epicodus`. If you used your own userID and password, see the example below for how to format this:
+1. Open your terminal and navigate to this project's production directory called `HairSalon`.
+2. In the production directory `HairSalon`, create a new file called `appsettings.json`.
+3. In `appsettings.json`, put in the following code. If you are using the default userID and password from the LearnHowToProgram.com lessons, `uid` will be `root` and `pwd` will be `epicodus`. **Note: the database name must always match the name of the database you created in the "Import Project Database" instructions above**. If you used your own userID and password, see the example below for how to format this:
 
 ```json
 {
@@ -48,8 +53,8 @@ For the `clients` table, create columns for "StylistId", "ClientId", and "Name".
 }
 ```
 
-5. In the production directory `HairSalon`, run the command `dotnet watch run` to launch the project in development mode with a watcher.
-6. Your browser should open to [https://localhost:5001](https://localhost:5001). If you can't access localhost:5001, it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, read this LearnHowToProgram.com lesson [Redirecting to HTTPS and Issuing a Security Certificate](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-2-basic-web-applications/3-2-0-17-redirecting-to-https-and-issuing-a-security-certificate).
+4. In the production directory `HairSalon`, run the command `dotnet watch run` to launch the project in development mode with a watcher.
+5. Your browser should open to [https://localhost:5001](https://localhost:5001). If you can't access localhost:5001, it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, read this LearnHowToProgram.com lesson [Redirecting to HTTPS and Issuing a Security Certificate](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-2-basic-web-applications/3-2-0-17-redirecting-to-https-and-issuing-a-security-certificate).
 
 ## Known Bugs
 
